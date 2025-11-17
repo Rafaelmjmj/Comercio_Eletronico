@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - Meu E-commerce</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="..\imagens\favicon.png" type="image/x-icon">
 </head>
+
 <body>
+
     <header>
         <img src="..\imagens\logo-ifg.png" alt="Logo do IFG" class="logo">
         <nav>
@@ -20,48 +26,71 @@
         </nav>
     </header>
 
-    <main>
-        <h1 class="titulo-pagina">Fale Conosco</h1>
-        <form action="sucesso-contato.html" method="POST" class="form-contato">
-            <label for="nome">Nome*</label>
-            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+    <main class="container my-5">
 
-            <label for="email">E-mail*</label>
-            <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com">
+        <h1 class="text-center mb-4 titulo-pagina">Fale Conosco</h1>
 
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx"
-                   pattern="\(\d{2}\)\s?\d{4,5}-\d{4}">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <form action="sucesso-contato.html" method="POST">
 
-            <label for="assunto">Assunto</label>
-            <select id="assunto" name="assunto">
-                <option value="">Selecione...</option>
-                <option value="duvida">Dúvida</option>
-                <option value="elogio">Elogio</option>
-                <option value="reclamacao">Reclamação</option>
-            </select>
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome*</label>
+                        <input type="text" id="nome" name="nome" class="form-control" required placeholder="Digite seu nome completo">
+                    </div>
 
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem..."></textarea>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail*</label>
+                        <input type="email" id="email" name="email" class="form-control" required placeholder="exemplo@dominio.com">
+                    </div>
 
-            <button type="submit" class="btn-enviar">Enviar</button>
-        </form>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" class="form-control"
+                            placeholder="(xx) xxxxx-xxxx"
+                            pattern="\(\d{2}\)\s?\d{4,5}-\d{4}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="assunto" class="form-label">Assunto</label>
+                        <select id="assunto" name="assunto" class="form-select">
+                            <option value="">Selecione...</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="elogio">Elogio</option>
+                            <option value="reclamacao">Reclamação</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" class="form-control" rows="5"
+                            placeholder="Digite sua mensagem..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        Enviar
+                    </button>
+
+                </form>
+            </div>
+        </div>
+
     </main>
 
     <footer>
-    <p>&copy; 2025 - Desenvolvido para o IFG</p>
-    <div class="redes-sociais">
-        <a href="https://www.instagram.com" target="_blank">
-            <img src="..\imagens\instagram.png" alt="Instagram">
-        </a>
-        <a href="https://www.facebook.com" target="_blank">
-            <img src="..\imagens\facebook.png" alt="Facebook">
-        </a>
-        <a href="https://github.com/Rafaelmjmj" target="_blank">
-            <img src="..\imagens\GitHub.png" alt="GitHub">
-        </a>
-    </div>
-</footer>>
+        <p>&copy; 2025 - Desenvolvido para o IFG</p>
+        <div class="redes-sociais">
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="..\imagens\instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="..\imagens\facebook.png" alt="Facebook">
+            </a>
+            <a href="https://github.com/Rafaelmjmj" target="_blank">
+                <img src="..\imagens\GitHub.png" alt="GitHub">
+            </a>
+        </div>
+    </footer>
+
 </body>
 </html>
-
