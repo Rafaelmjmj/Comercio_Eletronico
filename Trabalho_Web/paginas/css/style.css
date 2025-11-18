@@ -52,7 +52,7 @@ footer {
     width: 100%;
 }
 
-/* ====== PRODUTOS ====== */
+/*PRODUTOS*/
 .titulo-pagina {
     text-align: center;
     color: #004d40;
@@ -99,12 +99,12 @@ footer {
     background-color: #004d40;
 }
 
-/* Indicação da página atual */
+/*Indicação da página atual*/
 .menu .ativo {
     text-decoration: underline;
 }
 
-/* ====== CONTATO ====== */
+/*CONTATO*/
 .form-contato {
     width: 60%;
     margin: 30px auto;
@@ -149,7 +149,7 @@ footer {
     background-color: #004d40;
 }
 
-/* ====== SUCESSO CONTATO ====== */
+/*SUCESSO CONTATO*/
 .sucesso-contato {
     background-color: #e0f7fa;
     height: 100vh;
@@ -190,7 +190,7 @@ footer {
     background-color: #004d40;
 }
 
-/* ====== CARRINHO ====== */
+/*CARRINHO*/
 .tabela-carrinho {
     width: 80%;
     margin: 30px auto;
@@ -243,7 +243,7 @@ footer {
     background-color: #004d40;
 }
 
-/* ====== SUCESSO PEDIDO ====== */
+/*SUCESSO PEDIDO*/
 .sucesso-pedido {
     background: linear-gradient(135deg, #a5d6a7, #81c784);
     height: 100vh;
@@ -287,7 +287,7 @@ footer {
     background-color: #1b5e20;
 }
 
-/* ====== RODAPÉ COM REDES SOCIAIS ====== */
+/*RODAPÉ COM REDES SOCIAIS*/
 footer {
     background-color: #004d40;
     color: white;
@@ -359,7 +359,7 @@ footer .redes-sociais img:hover {
     background-color: #004d40 !important;
 }
 
-/* ====== REGISTRO DE NOVO USUÁRIO ====== */
+/*REGISTRO DE NOVO USUÁRIO*/
 
 .container-form {
     width: 400px;
