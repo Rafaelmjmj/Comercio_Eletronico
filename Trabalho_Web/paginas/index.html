@@ -3,92 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu E-commerce - Página Inicial</title>
+    <title>Página Inicial - Meu E-commerce</title>
 
-
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon">
 </head>
-
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#004d40;">
-        <div class="container">
-            
-            <a class="navbar-brand" href="index.html">
-                <img src="../imagens/logo-ifg.png" alt="Logo" width="90">
-            </a>
+<!-- HEADER COM AVATAR + DROPDOWN -->
+<nav class="navbar navbar-expand-lg navbar-dark px-3 custom-navbar">
+  <a class="navbar-brand d-flex align-items-center" href="index.html">
+    <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
+    Inicio
+  </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-            <div class="collapse navbar-collapse" id="menuNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Página Inicial</a></li>
-                    <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="carrinho.html">Carrinho</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
 
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <!-- MENU PRINCIPAL -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="produtos.html">Produtos</a>
+      </li>
 
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="carrinho.html">Carrinho</a>
+      </li>
 
-        <div class="carousel-inner">
+      <li class="nav-item">
+        <a class="nav-link" href="contato.html">Contato</a>
+      </li>
+    </ul>
 
-            <div class="carousel-item active">
-                <img src="../imagens/Banner1.png" class="d-block w-100" style="max-height: 600px; object-fit: cover;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Promoções Imperdíveis</h5>
-                    <p>Os melhores produtos esportivos</p>
-                </div>
-            </div>
+    <!-- DROPDOWN MINHA CONTA -->
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="avatarDropdown"
+           role="button" data-bs-toggle="dropdown">
 
-            <div class="carousel-item">
-                <img src="../imagens/Banner2.png" class="d-block w-100" style="max-height: 600px; object-fit: cover;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Equipamentos de Qualidade</h5>
-                    <p>Com os menores preços do mercado</p>
-                </div>
-            </div>
+          <img src="../imagens/Avatar.png" width="40" height="40" class="rounded-circle me-2 border border-light">
+          <span>Minha Conta</span>
+        </a>
 
-        </div>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="novo-usuario.html">Cadastrar</a></li>
+          <li><a class="dropdown-item" href="login.html">Entrar</a></li>
+          <li><a class="dropdown-item" href="meus-dados.html">Meus Dados</a></li>
+          <li><a class="dropdown-item" href="meus-pedidos.html">Meus Pedidos</a></li>
+        </ul>
+      </li>
+    </ul>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
+  </div>
+</nav>
 
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
+<!-- CAROUSEL -->
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
 
+    <div class="carousel-item active">
+      <img src="../imagens/Banner1.png" class="d-block w-100" alt="Banner 1">
     </div>
 
-    <footer>
-        <p>&copy; 2025 - Desenvolvido para o IFG</p>
-        <div class="redes-sociais">
+    <div class="carousel-item">
+      <img src="../imagens/Banner2.png" class="d-block w-100" alt="Banner 2">
+    </div>
+
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+    <!-- CONTEÚDO ORIGINAL DA PÁGINA -->
+    <section class="text-center py-4">
+        <h1>Bem-vindo à MJStore</h1>
+        <p class="lead">Os melhores produtos esportivos com os menores preços</p>
+    </section>
+    <section class="produtos-home">
+    <h2>Produtos em Destaque</h2>
+
+    <div class="grid-produtos">
+        <div class="produto-card">
+            <img src="../imagens/produto1.jpeg" alt="Produto 1">
+            <h3>Camiseta Seleção</h3>
+            <p>R$ 299,90</p>
+            <a href="produtos.html" class="btn">Ver mais</a>
+        </div>
+
+        <div class="produto-card">
+            <img src="../imagens/produto2.jpg" alt="Produto 2">
+            <h3>Tenis Esportivo</h3>
+            <p>R$ 1699,90</p>
+            <a href="produtos.html" class="btn">Ver mais</a>
+        </div>
+
+        <div class="produto-card">
+            <img src="../imagens/produto3.webp" alt="Produto 3">
+            <h3>Bola de Volei</h3>
+            <p>R$ 349,90</p>
+            <a href="produtos.html" class="btn">Ver mais</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2025 MJStore — Todos os direitos reservados.</p>
+    <div class="redes-sociais">
             <a href="https://www.instagram.com" target="_blank">
-                <img src="../imagens/instagram.png" alt="Instagram">
+                <img src="..\imagens\instagram.png" alt="Instagram">
             </a>
             <a href="https://www.facebook.com" target="_blank">
-                <img src="../imagens/facebook.png" alt="Facebook">
+                <img src="..\imagens\facebook.png" alt="Facebook">
             </a>
             <a href="https://github.com/Rafaelmjmj" target="_blank">
-                <img src="../imagens/GitHub.png" alt="GitHub">
+                <img src="..\imagens\GitHub.png" alt="GitHub">
             </a>
         </div>
-    </footer>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
