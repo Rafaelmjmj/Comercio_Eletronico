@@ -7,11 +7,16 @@
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- CSS próprio -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- HEADER PADRÃO -->
+<!-- HEADER -->
 <nav class="navbar navbar-expand-lg navbar-dark px-3 custom-navbar">
   <a class="navbar-brand d-flex align-items-center" href="index.html">
     <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
@@ -22,54 +27,166 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse justify-content-end" id="navbarAvatar">
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="avatarDropdown"
-           role="button" data-bs-toggle="dropdown">
-          <img src="../imagens/Avatar.png" width="40" height="40" class="rounded-circle me-2 border border-light">
-          <span>Minha Conta</span>
-        </a>
+  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
 
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="novo-usuario.html">Cadastrar</a></li>
-          <li><a class="dropdown-item" href="entrar.html">Entrar</a></li>
-          <li><a class="dropdown-item" href="meus-dados.html">Meus Dados</a></li>
-          <li><a class="dropdown-item" href="meus-pedidos.html">Meus Pedidos</a></li>
+        <!-- MENU PRINCIPAL -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="carrinho.html">Carrinho</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+            </li>
+             <ul class="navbar-nav align-items-center me-3">
+                <li class="nav-item position-relative">
+                    <a class="nav-link" href="carrinho.html">
+                        🛒
+                        <span
+                            id="cart-count"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                            0
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </ul>
-      </li>
-    </ul>
-  </div>
+
+        <!-- MINHA CONTA -->
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                   id="avatarDropdown" role="button" data-bs-toggle="dropdown">
+                    <img src="../imagens/Avatar.png" width="40" height="40"
+                         class="rounded-circle me-2 border border-light">
+                    Minha Conta
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end">
+
+    <!-- Usuário NÃO logado -->
+    <li>
+        <a class="dropdown-item" href="novo-usuario.html" id="linkCadastrar">
+            Cadastrar
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item" href="login.html" id="linkEntrar">
+            Entrar
+        </a>
+    </li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- Usuário LOGADO -->
+    <li>
+        <a class="dropdown-item" href="meus-dados.html" id="linkMeusDados">
+            Meus Dados
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item" href="meus-pedidos.html" id="linkMeusPedidos">
+            Meus Pedidos
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item text-danger" href="#" id="linkSair">
+            Sair
+        </a>
+    </li>
+
+</ul>
+
+    </div>
 </nav>
 
+<!-- CONTEÚDO -->
 <div class="container my-5">
-    <div class="row">
 
-        <!-- CONTEÚDO PRINCIPAL -->
-        <main class="col-md-9">
-            <h2>Meus Endereços</h2>
+    <!-- TÍTULO -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold">Meus Endereços</h2>
+            <p class="text-muted mb-0">Gerencie seus endereços de entrega</p>
+        </div>
 
-            <div class="card mb-3">
+        <a href="novo-endereco.html" class="btn btn-success btn-lg">
+            <i class="bi bi-plus-circle me-2"></i>
+            Novo Endereço
+        </a>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- ENDEREÇO 1 -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 h-100">
                 <div class="card-body">
-                    <p><strong>Endereço 1:</strong> Rua A, nº 123, Goiânia - GO</p>
-                    <button class="btn btn-danger btn-sm">Excluir endereço</button>
+                    <h5 class="card-title fw-semibold">
+                        <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                        Endereço Principal
+                    </h5>
+
+                    <p class="card-text text-muted mb-4">
+                        Rua A, nº 123 <br>
+                        Setor Central <br>
+                        Goiânia - GO
+                    </p>
+
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-pencil-square me-1"></i>
+                            Editar
+                        </button>
+
+                        <button class="btn btn-outline-danger btn-sm">
+                            <i class="bi bi-trash me-1"></i>
+                            Excluir
+                        </button>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="card mb-3">
+        <!-- ENDEREÇO 2 -->
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 h-100">
                 <div class="card-body">
-                    <p><strong>Endereço 2:</strong> Avenida Central, nº 456, Aparecida - GO</p>
-                    <button class="btn btn-danger btn-sm">Excluir endereço</button>
+                    <h5 class="card-title fw-semibold">
+                        <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                        Endereço Secundário
+                    </h5>
+
+                    <p class="card-text text-muted mb-4">
+                        Avenida Central, nº 456 <br>
+                        Bairro Industrial <br>
+                        Aparecida de Goiânia - GO
+                    </p>
+
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-pencil-square me-1"></i>
+                            Editar
+                        </button>
+
+                        <button class="btn btn-outline-danger btn-sm">
+                            <i class="bi bi-trash me-1"></i>
+                            Excluir
+                        </button>
+                    </div>
                 </div>
             </div>
-
-            <button class="btn btn-primary mt-3">Cadastrar novo endereço</button>
-        </main>
+        </div>
 
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
-

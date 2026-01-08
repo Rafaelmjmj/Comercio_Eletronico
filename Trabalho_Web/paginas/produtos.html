@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos - Meu E-commerce</title>
+    <title>Produtos - MJStore</title>
 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
@@ -12,158 +13,137 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark px-3 custom-navbar">
-  <a class="navbar-brand d-flex align-items-center" href="index.html">
-    <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
-    Minha Loja
-  </a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark px-3 custom-navbar">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
+        MJStore
+    </a>
 
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
 
-    <!-- MENU PRINCIPAL -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="produtos.html">Produtos</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="carrinho.html">Carrinho</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="contato.html">Contato</a>
-      </li>
-    </ul>
-
-    <!-- DROPDOWN MINHA CONTA -->
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="avatarDropdown"
-           role="button" data-bs-toggle="dropdown">
-
-          <img src="../imagens/Avatar.png" width="40" height="40" class="rounded-circle me-2 border border-light">
-          <span>Minha Conta</span>
-        </a>
-
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="novo-usuario.html">Cadastrar</a></li>
-          <li><a class="dropdown-item" href="login.html">Entrar</a></li>
-          <li><a class="dropdown-item" href="meus-dados.html">Meus Dados</a></li>
-          <li><a class="dropdown-item" href="meus-pedidos.html">Meus Pedidos</a></li>
+        <!-- MENU PRINCIPAL -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="carrinho.html">Carrinho</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+            </li>
         </ul>
-      </li>
-    </ul>
 
-  </div>
+        <!-- BUSCA -->
+        <div class="d-flex mx-3" style="max-width: 300px;">
+            <input
+                type="text"
+                id="campoBusca"
+                class="form-control"
+                placeholder="Buscar produto..."
+            >
+        </div>
+
+        <!-- CARRINHO -->
+        <ul class="navbar-nav align-items-center me-3">
+            <li class="nav-item position-relative">
+                <a class="nav-link" href="carrinho.html">
+                    🛒
+                    <span
+                        id="cart-count"
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                        0
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- MINHA CONTA -->
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                   id="avatarDropdown" role="button" data-bs-toggle="dropdown">
+                    <img src="../imagens/Avatar.png" width="40" height="40"
+                         class="rounded-circle me-2 border border-light">
+                    Minha Conta
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end">
+
+                    <!-- Usuário NÃO logado -->
+                    <li>
+                        <a class="dropdown-item" href="novo-usuario.html" id="linkCadastrar">
+                            Cadastrar
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="login.html" id="linkEntrar">
+                            Entrar
+                        </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider"></li>
+
+                    <!-- Usuário LOGADO -->
+                    <li>
+                        <a class="dropdown-item" href="meus-dados.html" id="linkMeusDados">
+                            Meus Dados
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="meus-pedidos.html" id="linkMeusPedidos">
+                            Meus Pedidos
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item text-danger" href="#" id="linkSair">
+                            Sair
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+
+    </div>
 </nav>
 
-    <main class="container my-4">
+<!-- CONTEÚDO -->
+<main class="container my-5">
 
-        <h1 class="titulo-pagina">Nossos Produtos</h1>
+    <h1 class="text-center mb-4 titulo-pagina">Nossos Produtos</h1>
 
-        <div class="row mt-4">
+    <!-- PRODUTOS VINDOS DA API -->
+    <div class="row g-4" id="listaProdutos">
+        <!-- Produtos inseridos via JavaScript -->
+    </div>
 
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="../imagens/produto1.jpeg" class="card-img-top" alt="Produto 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Camiseta seleção Brasil</h5>
-                        <p class="card-text">
-                            Camiseta da seleção Brasileira anos 23-24, perfeita para quem é fã de verdade.
-                        </p>
-                        <p class="fw-bold text-success">R$ 299,90</p>
-                        <button class="btn btn-success w-100">Adicionar ao carrinho</button>
-                    </div>
-                </div>
-            </div>
+</main>
 
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="../imagens/produto2.jpg" class="card-img-top" alt="Produto 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Tênis Ja Morant 3</h5>
-                        <p class="card-text">
-                            Tênis para basquete e voleibol com excelente construção e amortecimento de impacto.
-                        </p>
-                        <p class="fw-bold text-success">R$ 1.699,00</p>
-                        <button class="btn btn-success w-100">Adicionar ao carrinho</button>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="../imagens/produto3.webp" class="card-img-top" alt="Produto 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Bola de Vôlei Mikasa</h5>
-                        <p class="card-text">
-                            Bola de vôlei profissional pra quem quer ter um jogo de qualidade.
-                        </p>
-                        <p class="fw-bold text-success">R$ 349,90</p>
-                        <button class="btn btn-success w-100">Adicionar ao carrinho</button>
-                    </div>
-                </div>
-            </div>
+<!-- FOOTER -->
+<footer class="mt-5">
+    <p>&copy; 2025 - Desenvolvido para o IFG</p>
 
-            <div class="col-md-4">
-                <div class="card shadow-sm h-100">
-                    <img src="../imagens/produto4.webp" class="card-img-top"
-                        alt="Bola de Vôlei" data-bs-toggle="tooltip" title="Bola de Vôlei Profissional Mikasa">
-                    <div class="card-body">
-                        <h5 class="card-title">Camiseta Internacional</h5>
-                        <p class="card-text text-success fw-semibold">R$ 259,90</p>
-                        <button class="btn btn-success w-100">Adicionar ao carrinho</button>
-                    </div>
-                </div>
-            </div>
+    <div class="redes-sociais">
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="../imagens/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="../imagens/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://github.com/Rafaelmjmj" target="_blank">
+            <img src="../imagens/GitHub.png" alt="GitHub">
+        </a>
+    </div>
+</footer>
 
-            <div class="col-md-4">
-                <div class="card shadow-sm h-100">
-                    <img src="../imagens/produto5.webp" class="card-img-top"
-                        alt="Bola de Vôlei" data-bs-toggle="tooltip" title="Bola de Vôlei Profissional Mikasa">
-                    <div class="card-body">
-                        <h5 class="card-title">Chuteira Adidas</h5>
-                        <p class="card-text text-success fw-semibold">R$ 429,90</p>
-                        <button class="btn btn-success w-100">Adicionar ao carrinho</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card shadow-sm h-100">
-                    <img src="../imagens/produto6.avif" class="card-img-top"
-                        alt="Bola de Vôlei" data-bs-toggle="tooltip" title="Bola de Vôlei Profissional Mikasa">
-                    <div class="card-body">
-                        <h5 class="card-title">Camiseta Vasco da Gama</h5>
-                        <p class="card-text text-success fw-semibold">R$ 249,90</p>
-                        <button class="btn btn-success w-100">Adicionar ao carrinho</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 - Desenvolvido para o IFG</p>
-        <div class="redes-sociais">
-            <a href="https://www.instagram.com" target="_blank">
-                <img src="../imagens/instagram.png" alt="Instagram">
-            </a>
-            <a href="https://www.facebook.com" target="_blank">
-                <img src="../imagens/facebook.png" alt="Facebook">
-            </a>
-            <a href="https://github.com/Rafaelmjmj" target="_blank">
-                <img src="../imagens/GitHub.png" alt="GitHub">
-            </a>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

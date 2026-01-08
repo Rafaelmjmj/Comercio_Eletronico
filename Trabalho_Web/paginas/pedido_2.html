@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedido #001</title>
+    <title>Pedido #002</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -11,7 +11,7 @@
 <body>
 
 <!-- HEADER -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar px-3">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
     <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
         Minha Loja
@@ -19,47 +19,78 @@
 </nav>
 
 <main class="container mt-4">
-    <h1 class="text-center text-success">Detalhes do Pedido #001</h1>
+    <h1 class="text-center text-success mb-4">Detalhes do Pedido #002</h1>
 
-    <table class="table table-bordered mt-4">
-        <thead class="table-success">
+    <table class="table table-bordered align-middle">
+        <thead class="table-success text-center">
             <tr>
-                <th>Item</th>
+                <th>Produto</th>
                 <th>Quantidade</th>
                 <th>Valor Unitário</th>
                 <th>Total</th>
             </tr>
         </thead>
+
         <tbody>
+            <!-- Produto 1 -->
             <tr>
-                <td>Camiseta Vasco da Gama</td>
-                <td>1</td>
-                <td>R$ 249,90</td>
-                <td>R$ 249,90</td>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <img src="../imagens/produto6.avif"
+                             alt="Camiseta Vasco da Gama"
+                             width="80"
+                             class="img-thumbnail me-3">
+                        <span>Camiseta Vasco da Gama</span>
+                    </div>
+                </td>
+                <td class="text-center">1</td>
+                <td class="text-center">R$ 249,90</td>
+                <td class="text-center">R$ 249,90</td>
             </tr>
+
+            <!-- Produto 2 -->
             <tr>
-                <td>Camiseta Internacional</td>
-                <td>1</td>
-                <td>R$ 259,90</td>
-                <td>R$ 259,90</td>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <img src="../imagens/produto4.webp"
+                             alt="Camiseta Internacional"
+                             width="80"
+                             class="img-thumbnail me-3">
+                        <span>Camiseta Internacional</span>
+                    </div>
+                </td>
+                <td class="text-center">1</td>
+                <td class="text-center">R$ 259,90</td>
+                <td class="text-center">R$ 259,90</td>
             </tr>
+
+            <!-- Produto 3 -->
             <tr>
-                <td>Tenis Nike </td>
-                <td>1</td>
-                <td>R$ 1699,90</td>
-                <td>R$ 1699,90</td>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <img src="../imagens/produto2.jpg"
+                             alt="Tênis Nike"
+                             width="80"
+                             class="img-thumbnail me-3">
+                        <span>Tênis Nike</span>
+                    </div>
+                </td>
+                <td class="text-center">1</td>
+                <td class="text-center">R$ 1.699,90</td>
+                <td class="text-center">R$ 1.699,90</td>
             </tr>
         </tbody>
+
         <tfoot>
             <tr class="table-success">
                 <th colspan="3" class="text-end">Total do Pedido:</th>
-                <th>R$ 2.209,70</th>
+                <th class="text-center">R$ 2.209,70</th>
             </tr>
         </tfoot>
     </table>
 
     <a href="meus-pedidos.html" class="btn btn-secondary mt-3">Voltar</a>
 </main>
-
+<script src="js/script.js"></script>
 </body>
 </html>

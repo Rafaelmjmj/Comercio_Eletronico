@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
 
 <head>
@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho de Compras - Meu E-commerce</title>
 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
@@ -14,134 +15,165 @@
 
 <body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-dark px-3 custom-navbar">
-  <a class="navbar-brand d-flex align-items-center" href="index.html">
-    <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
-    Minha Loja
-  </a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark px-3 custom-navbar">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
+        Minha Loja
+    </a>
 
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
 
-    <!-- MENU PRINCIPAL -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="produtos.html">Produtos</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="carrinho.html">Carrinho</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="contato.html">Contato</a>
-      </li>
-    </ul>
-
-    <!-- DROPDOWN MINHA CONTA -->
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="avatarDropdown"
-           role="button" data-bs-toggle="dropdown">
-
-          <img src="../imagens/Avatar.png" width="40" height="40" class="rounded-circle me-2 border border-light">
-          <span>Minha Conta</span>
-        </a>
-
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="novo-usuario.html">Cadastrar</a></li>
-          <li><a class="dropdown-item" href="login.html">Entrar</a></li>
-          <li><a class="dropdown-item" href="meus-dados.html">Meus Dados</a></li>
-          <li><a class="dropdown-item" href="meus-pedidos.html">Meus Pedidos</a></li>
+        <!-- MENU PRINCIPAL -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="carrinho.html">Carrinho</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+            </li>
+            <ul class="navbar-nav align-items-center me-3">
+                <li class="nav-item position-relative">
+                    <a class="nav-link" href="carrinho.html">
+                        🛒
+                        <span
+                            id="cart-count"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                            0
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </ul>
-      </li>
-    </ul>
 
-  </div>
+        <!-- MINHA CONTA -->
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                   id="avatarDropdown" role="button" data-bs-toggle="dropdown">
+                    <img src="../imagens/Avatar.png" width="40" height="40"
+                         class="rounded-circle me-2 border border-light">
+                    Minha Conta
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <a class="dropdown-item" href="novo-usuario.html" id="linkCadastrar">
+                            Cadastrar
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="login.html" id="linkEntrar">
+                            Entrar
+                        </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li>
+                        <a class="dropdown-item" href="meus-dados.html" id="linkMeusDados">
+                            Meus Dados
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="meus-pedidos.html" id="linkMeusPedidos">
+                            Meus Pedidos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item text-danger" href="#" id="linkSair">
+                            Sair
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
 </nav>
 
+<!-- CONTEÚDO -->
+<main class="container my-5">
 
-    <main class="container my-5">
+    <h1 class="titulo-pagina text-center mb-5">Carrinho de Compras</h1>
 
-        <h1 class="titulo-pagina text-center mb-4">Carrinho de Compras</h1>
+    <!-- CONTAINER DINÂMICO DO CARRINHO -->
+    <div class="row g-4" id="listaCarrinho">
 
-        <div class="row g-4">
+    </div>
 
-            <div class="col-md-4">
-                <div class="card shadow-sm h-100">
-                    <img src="../imagens/produto1.jpeg" class="card-img-top"
-                        alt="Camiseta Brasil" data-bs-toggle="tooltip" title="Camiseta seleção Brasil">
-                    <div class="card-body">
-                        <h5 class="card-title">Camiseta seleção Brasil</h5>
-                        <p class="card-text text-success fw-semibold">R$ 299,90</p>
-                    </div>
-                </div>
+    <!-- CÁLCULO DE FRETE (ADICIONADO) -->
+    <div class="card shadow-lg mt-5">
+        <div class="card-body">
+            <h4 class="fw-bold mb-3">Cálculo de Frete</h4>
+
+            <div class="mb-3">
+                <label for="cep-frete" class="form-label">CEP</label>
+                <input
+                    type="text"
+                    id="cep-frete"
+                    class="form-control"
+                    placeholder="00000-000">
             </div>
 
-            <div class="col-md-4">
-                <div class="card shadow-sm h-100">
-                    <img src="../imagens/produto2.jpg" class="card-img-top"
-                        alt="Tenis Ja Morant" data-bs-toggle="tooltip" title="Tenis Ja Morant 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Tenis Ja Morant 3</h5>
-                        <p class="card-text text-success fw-semibold">R$ 1.699,00</p>
-                    </div>
-                </div>
-            </div>
+            <button
+                type="button"
+                class="btn btn-success btn-lg w-100 mt-3"
+                onclick="calcularFrete()">
+                Calcular Frete
+            </button>
 
-            <div class="col-md-4">
-                <div class="card shadow-sm h-100">
-                    <img src="../imagens/produto3.webp" class="card-img-top"
-                        alt="Bola de Vôlei" data-bs-toggle="tooltip" title="Bola de Vôlei Profissional Mikasa">
-                    <div class="card-body">
-                        <h5 class="card-title">Bola de Volei Mikasa</h5>
-                        <p class="card-text text-success fw-semibold">R$ 349,90</p>
-                    </div>
-                </div>
-            </div>
-
+            <div id="opcoesFrete" class="mt-3"></div>
         </div>
+    </div>
 
-        <div class="card shadow-lg mt-5 p-4">
-            <h4 class="fw-bold">Resumo da Compra</h4>
+    <!-- RESUMO -->
+    <div class="card shadow-lg mt-5">
+        <div class="card-body">
+            <h4 class="fw-bold mb-3">Resumo da Compra</h4>
 
-            <p class="fs-5 mt-3">
-                <strong>Total:</strong>
-                <span class="text-primary fw-bold">R$ 2.348,80</span>
-            </p>
+            <div class="d-flex justify-content-between fs-5">
+                <span>Total:</span>
+                <span class="fw-bold text-primary" id="totalCarrinho">
+                    R$ 0,00
+                </span>
+            </div>
 
-            <a href="sucesso-pedido.html" class="btn btn-success btn-lg w-100 mt-3">
+            <a href="sucesso-pedido.html" class="btn btn-success btn-lg w-100 mt-4">
                 Finalizar Pedido
             </a>
         </div>
+    </div>
 
-    </main>
+</main>
 
-    <footer>
-        <p>&copy; 2025 - Desenvolvido para o IFG</p>
-        <div class="redes-sociais">
-            <a href="https://www.instagram.com" target="_blank">
-                <img src="../imagens/instagram.png" alt="Instagram">
-            </a>
-            <a href="https://www.facebook.com" target="_blank">
-                <img src="../imagens/facebook.png" alt="Facebook">
-            </a>
-            <a href="https://github.com/Rafaelmjmj" target="_blank">
-                <img src="../imagens/GitHub.png" alt="GitHub">
-            </a>
-        </div>
-    </footer>
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2025 - Desenvolvido para o IFG</p>
+    <div class="redes-sociais">
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="../imagens/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="../imagens/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://github.com/Rafaelmjmj" target="_blank">
+            <img src="../imagens/GitHub.png" alt="GitHub">
+        </a>
+    </div>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-    </script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
-
 </html>

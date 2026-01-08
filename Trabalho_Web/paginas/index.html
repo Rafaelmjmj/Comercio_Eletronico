@@ -12,114 +12,167 @@
 </head>
 <body>
 
-<!-- HEADER COM AVATAR + DROPDOWN -->
+<!-- HEADER -->
 <nav class="navbar navbar-expand-lg navbar-dark px-3 custom-navbar">
-  <a class="navbar-brand d-flex align-items-center" href="index.html">
-    <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
-    Inicio
-  </a>
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
+        Início
+    </a>
 
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
 
-    <!-- MENU PRINCIPAL -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="produtos.html">Produtos</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="carrinho.html">Carrinho</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="contato.html">Contato</a>
-      </li>
-    </ul>
-
-    <!-- DROPDOWN MINHA CONTA -->
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="avatarDropdown"
-           role="button" data-bs-toggle="dropdown">
-
-          <img src="../imagens/Avatar.png" width="40" height="40" class="rounded-circle me-2 border border-light">
-          <span>Minha Conta</span>
-        </a>
-
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="novo-usuario.html">Cadastrar</a></li>
-          <li><a class="dropdown-item" href="login.html">Entrar</a></li>
-          <li><a class="dropdown-item" href="meus-dados.html">Meus Dados</a></li>
-          <li><a class="dropdown-item" href="meus-pedidos.html">Meus Pedidos</a></li>
+        <!-- MENU PRINCIPAL -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="carrinho.html">Carrinho</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+            </li>
+             <ul class="navbar-nav align-items-center me-3">
+                <li class="nav-item position-relative">
+                    <a class="nav-link" href="carrinho.html">
+                        🛒
+                        <span
+                            id="cart-count"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                            0
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </ul>
-      </li>
-    </ul>
 
-  </div>
+        <!-- MINHA CONTA -->
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                   id="avatarDropdown" role="button" data-bs-toggle="dropdown">
+                    <img src="../imagens/Avatar.png" width="40" height="40"
+                         class="rounded-circle me-2 border border-light">
+                    Minha Conta
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end">
+
+    <!-- Usuário NÃO logado -->
+    <li>
+        <a class="dropdown-item" href="novo-usuario.html" id="linkCadastrar">
+            Cadastrar
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item" href="login.html" id="linkEntrar">
+            Entrar
+        </a>
+    </li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- Usuário LOGADO -->
+    <li>
+        <a class="dropdown-item" href="meus-dados.html" id="linkMeusDados">
+            Meus Dados
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item" href="meus-pedidos.html" id="linkMeusPedidos">
+            Meus Pedidos
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item text-danger" href="#" id="linkSair">
+            Sair
+        </a>
+    </li>
+
+</ul>
+
+    </div>
 </nav>
 
 <!-- CAROUSEL -->
 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
+    <div class="carousel-inner">
 
-    <div class="carousel-item active">
-      <img src="../imagens/Banner1.png" class="d-block w-100" alt="Banner 1">
+        <div class="carousel-item active">
+            <img src="../imagens/Banner1.png" class="d-block w-100" alt="Banner 1">
+        </div>
+
+        <div class="carousel-item">
+            <img src="../imagens/Banner2.png" class="d-block w-100" alt="Banner 2">
+        </div>
+
     </div>
 
-    <div class="carousel-item">
-      <img src="../imagens/Banner2.png" class="d-block w-100" alt="Banner 2">
-    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
 
-  </div>
-
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
 </div>
 
-<!-- CONTEÚDO ORIGINAL -->
-<section class="text-center py-4">
-    <h1>Bem-vindo à MJStore</h1>
+<!-- APRESENTAÇÃO -->
+<section class="text-center py-5">
+    <h1 class="mb-3">Bem-vindo à MJStore</h1>
     <p class="lead">Os melhores produtos esportivos com os menores preços</p>
 </section>
 
-<section class="produtos-home">
-    <h2>Produtos em Destaque</h2>
+<!-- PRODUTOS EM DESTAQUE -->
+<section class="container pb-5">
+    <h2 class="text-center mb-4">Produtos em Destaque</h2>
 
-    <div class="grid-produtos">
+    <div class="row g-4">
 
-        <div class="produto-card">
-            <img src="../imagens/produto1.jpeg" alt="Produto 1">
-            <h3>Camiseta Seleção</h3>
-            <p>R$ 299,90</p>
-            <a href="produtos.html" class="btn btn-primary w-100 mt-2">Ver mais</a>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="../imagens/produto1.jpeg" class="card-img-top" alt="Produto 1">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Camiseta Seleção</h5>
+                    <p class="fw-bold">R$ 299,90</p>
+                    <a href="produtos.html" class="btn btn-primary w-100">Ver mais</a>
+                </div>
+            </div>
         </div>
 
-        <div class="produto-card">
-            <img src="../imagens/produto2.jpg" alt="Produto 2">
-            <h3>Tenis Esportivo</h3>
-            <p>R$ 1699,90</p>
-            <a href="produtos.html" class="btn btn-primary w-100 mt-2">Ver mais</a>
+        <div class="col-md-4">
+            <div class="card h-200 shadow-sm">
+                <img src="../imagens/produto2.jpg" class="card-img-top" alt="Produto 2">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Tênis Esportivo</h5>
+                    <p class="fw-bold">R$ 1699,90</p>
+                    <a href="produtos.html" class="btn btn-primary w-100">Ver mais</a>
+                </div>
+            </div>
         </div>
 
-        <div class="produto-card">
-            <img src="../imagens/produto3.webp" alt="Produto 3">
-            <h3>Bola de Volei</h3>
-            <p>R$ 349,90</p>
-            <a href="produtos.html" class="btn btn-primary w-100 mt-2">Ver mais</a>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="../imagens/produto3.webp" class="card-img-top" alt="Produto 3">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Bola de Vôlei</h5>
+                    <p class="fw-bold">R$ 349,90</p>
+                    <a href="produtos.html" class="btn btn-primary w-100">Ver mais</a>
+                </div>
+            </div>
         </div>
 
     </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
     <p>© 2025 MJStore — Todos os direitos reservados.</p>
 
@@ -137,6 +190,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="js/script.js"></script>
 </body>
 </html>

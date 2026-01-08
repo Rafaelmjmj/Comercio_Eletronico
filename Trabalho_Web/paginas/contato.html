@@ -26,93 +26,147 @@
 
   <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
 
-    <!-- MENU PRINCIPAL -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="produtos.html">Produtos</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="carrinho.html">Carrinho</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="contato.html">Contato</a>
-      </li>
-    </ul>
-
-    <!-- DROPDOWN MINHA CONTA -->
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="avatarDropdown"
-           role="button" data-bs-toggle="dropdown">
-
-          <img src="../imagens/Avatar.png" width="40" height="40" class="rounded-circle me-2 border border-light">
-          <span>Minha Conta</span>
-        </a>
-
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="novo-usuario.html">Cadastrar</a></li>
-          <li><a class="dropdown-item" href="login.html">Entrar</a></li>
-          <li><a class="dropdown-item" href="meus-dados.html">Meus Dados</a></li>
-          <li><a class="dropdown-item" href="meus-pedidos.html">Meus Pedidos</a></li>
+        <!-- MENU PRINCIPAL -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="carrinho.html">Carrinho</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+            </li>
+             <ul class="navbar-nav align-items-center me-3">
+                <li class="nav-item position-relative">
+                    <a class="nav-link" href="carrinho.html">
+                        🛒
+                        <span
+                            id="cart-count"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                            0
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </ul>
-      </li>
-    </ul>
 
-  </div>
+        <!-- MINHA CONTA -->
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                   id="avatarDropdown" role="button" data-bs-toggle="dropdown">
+                    <img src="../imagens/Avatar.png" width="40" height="40"
+                         class="rounded-circle me-2 border border-light">
+                    Minha Conta
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end">
+
+    <!-- Usuário NÃO logado -->
+    <li>
+        <a class="dropdown-item" href="novo-usuario.html" id="linkCadastrar">
+            Cadastrar
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item" href="login.html" id="linkEntrar">
+            Entrar
+        </a>
+    </li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- Usuário LOGADO -->
+    <li>
+        <a class="dropdown-item" href="meus-dados.html" id="linkMeusDados">
+            Meus Dados
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item" href="meus-pedidos.html" id="linkMeusPedidos">
+            Meus Pedidos
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item text-danger" href="#" id="linkSair">
+            Sair
+        </a>
+    </li>
+
+</ul>
+
+    </div>
 </nav>
 
     <main class="container my-5">
 
-        <h1 class="text-center mb-4 titulo-pagina">Fale Conosco</h1>
+    <h1 class="text-center mb-4">Fale Conosco</h1>
 
-        <div class="card shadow-lg">
-            <div class="card-body">
-                <form action="sucesso-contato.html" method="POST">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
 
-                    <div class="mb-3">
-                        <label for="nome" class="form-label">Nome*</label>
-                        <input type="text" id="nome" name="nome" class="form-control" required placeholder="Digite seu nome completo">
-                    </div>
+            <div class="card shadow">
+                <div class="card-body">
 
-                    <div class="mb-3">
-                        <label for="email" class="form-label">E-mail*</label>
-                        <input type="email" id="email" name="email" class="form-control" required placeholder="exemplo@dominio.com">
-                    </div>
+                    <form action="sucesso-contato.html" method="POST">
 
-                    <div class="mb-3">
-                        <label for="telefone" class="form-label">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" class="form-control"
-                            placeholder="(xx) xxxxx-xxxx"
-                            pattern="\(\d{2}\)\s?\d{4,5}-\d{4}">
-                    </div>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome*</label>
+                            <input type="text" id="nome" name="nome"
+                                   class="form-control"
+                                   placeholder="Digite seu nome completo" required>
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="assunto" class="form-label">Assunto</label>
-                        <select id="assunto" name="assunto" class="form-select">
-                            <option value="">Selecione...</option>
-                            <option value="duvida">Dúvida</option>
-                            <option value="elogio">Elogio</option>
-                            <option value="reclamacao">Reclamação</option>
-                        </select>
-                    </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail*</label>
+                            <input type="email" id="email" name="email"
+                                   class="form-control"
+                                   placeholder="exemplo@dominio.com" required>
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="mensagem" class="form-label">Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" class="form-control" rows="5"
-                            placeholder="Digite sua mensagem..."></textarea>
-                    </div>
+                        <div class="mb-3">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone"
+                                   class="form-control"
+                                   placeholder="(xx) xxxxx-xxxx">
+                        </div>
 
-                    <button type="submit" class="btn btn-primary w-100">
-                        Enviar
-                    </button>
+                        <div class="mb-3">
+                            <label for="assunto" class="form-label">Assunto</label>
+                            <select id="assunto" name="assunto" class="form-select">
+                                <option value="">Selecione...</option>
+                                <option>Dúvida</option>
+                                <option>Elogio</option>
+                                <option>Reclamação</option>
+                            </select>
+                        </div>
 
-                </form>
+                        <div class="mb-4">
+                            <label for="mensagem" class="form-label">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem"
+                                      class="form-control"
+                                      rows="5"
+                                      placeholder="Digite sua mensagem..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Enviar
+                        </button>
+
+                    </form>
+
+                </div>
             </div>
-        </div>
 
-    </main>
+        </div>
+    </div>
+
+</main>
+
 
     <footer>
         <p>&copy; 2025 - Desenvolvido para o IFG</p>
@@ -131,6 +185,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-
+<script src="js/script.js"></script>
 </body>
 </html>

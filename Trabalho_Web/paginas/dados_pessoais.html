@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dados Pessoais</title>
+    <title>Meus Dados</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS próprio (apenas para cores ou ajustes finos) -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- HEADER PADRÃO -->
+<!-- HEADER -->
 <nav class="navbar navbar-expand-lg navbar-dark px-3 custom-navbar">
   <a class="navbar-brand d-flex align-items-center" href="index.html">
     <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
@@ -22,43 +24,123 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse justify-content-end" id="navbarAvatar">
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="avatarDropdown"
-           role="button" data-bs-toggle="dropdown">
-          <img src="../imagens/Avatar.png" width="40" height="40" class="rounded-circle me-2 border border-light">
-          <span>Minha Conta</span>
-        </a>
+  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
 
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="novo-usuario.html">Cadastrar</a></li>
-          <li><a class="dropdown-item" href="entrar.html">Entrar</a></li>
-          <li><a class="dropdown-item" href="meus-dados.html">Meus Dados</a></li>
-          <li><a class="dropdown-item" href="meus-pedidos.html">Meus Pedidos</a></li>
+        <!-- MENU PRINCIPAL -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="carrinho.html">Carrinho</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+            </li>
+             <ul class="navbar-nav align-items-center me-3">
+                <li class="nav-item position-relative">
+                    <a class="nav-link" href="carrinho.html">
+                        🛒
+                        <span
+                            id="cart-count"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                            0
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </ul>
-      </li>
-    </ul>
-  </div>
+
+        <!-- MINHA CONTA -->
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                   id="avatarDropdown" role="button" data-bs-toggle="dropdown">
+                    <img src="../imagens/Avatar.png" width="40" height="40"
+                         class="rounded-circle me-2 border border-light">
+                    Minha Conta
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end">
+
+    <!-- Usuário NÃO logado -->
+    <li>
+        <a class="dropdown-item" href="novo-usuario.html" id="linkCadastrar">
+            Cadastrar
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item" href="login.html" id="linkEntrar">
+            Entrar
+        </a>
+    </li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- Usuário LOGADO -->
+    <li>
+        <a class="dropdown-item" href="meus-dados.html" id="linkMeusDados">
+            Meus Dados
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item" href="meus-pedidos.html" id="linkMeusPedidos">
+            Meus Pedidos
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item text-danger" href="#" id="linkSair">
+            Sair
+        </a>
+    </li>
+
+</ul>
+
+    </div>
 </nav>
 
+<!-- CONTEÚDO -->
 <div class="container my-5">
-    <div class="row">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
 
-        <!-- CONTEÚDO PRINCIPAL -->
-        <main class="col-md-9">
-            <h2>Dados Pessoais</h2>
-            <p><strong>Nome:</strong> Rafael Machado Jeziorny</p>
-            <p><strong>E-mail:</strong> rafaelmachadojeziorny@gmail.com</p>
-            <p><strong>Telefone:</strong> (61) 99999-9999</p>
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4 class="mb-0">Meus Dados</h4>
+                </div>
 
-            <button class="btn btn-primary mt-3">Alterar meus dados</button>
-        </main>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <strong>Nome:</strong>
+                        <p class="mb-0">Rafael Machado Jeziorny</p>
+                    </div>
 
+                    <div class="mb-3">
+                        <strong>E-mail:</strong>
+                        <p class="mb-0">rafaelmachadojeziorny@gmail.com</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <strong>Telefone:</strong>
+                        <p class="mb-0">(61) 99999-9999</p>
+                    </div>
+
+                    <div class="d-grid">
+                        <button class="btn btn-outline-primary">
+                            Alterar meus dados
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
-

@@ -11,7 +11,7 @@
 <body>
 
 <!-- HEADER -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar px-3">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
     <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
         Minha Loja
@@ -19,41 +19,62 @@
 </nav>
 
 <main class="container mt-4">
-    <h1 class="text-center text-success">Detalhes do Pedido #001</h1>
+    <h1 class="text-center text-success mb-4">Detalhes do Pedido #001</h1>
 
-    <table class="table table-bordered mt-4">
-        <thead class="table-success">
+    <table class="table table-bordered align-middle">
+        <thead class="table-success text-center">
             <tr>
-                <th>Item</th>
+                <th>Produto</th>
                 <th>Quantidade</th>
                 <th>Valor Unitário</th>
                 <th>Total</th>
             </tr>
         </thead>
+
         <tbody>
+            <!-- Produto 1 -->
             <tr>
-                <td>Camiseta Seleção</td>
-                <td>1</td>
-                <td>R$ 299,90</td>
-                <td>R$ 299,90</td>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <img src="../imagens/produto1.jpeg" 
+                             alt="Camiseta Seleção" 
+                             width="80" 
+                             class="img-thumbnail me-3">
+                        <span>Camiseta Seleção</span>
+                    </div>
+                </td>
+                <td class="text-center">1</td>
+                <td class="text-center">R$ 299,90</td>
+                <td class="text-center">R$ 299,90</td>
             </tr>
+
+            <!-- Produto 2 -->
             <tr>
-                <td>Bola de Volei</td>
-                <td>1</td>
-                <td>R$ 349,90</td>
-                <td>R$ 349,90</td>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <img src="../imagens/produto3.webp" 
+                             alt="Bola de Vôlei" 
+                             width="80" 
+                             class="img-thumbnail me-3">
+                        <span>Bola de Vôlei</span>
+                    </div>
+                </td>
+                <td class="text-center">1</td>
+                <td class="text-center">R$ 349,90</td>
+                <td class="text-center">R$ 349,90</td>
             </tr>
         </tbody>
+
         <tfoot>
             <tr class="table-success">
                 <th colspan="3" class="text-end">Total do Pedido:</th>
-                <th>R$ 649,80</th>
+                <th class="text-center">R$ 649,80</th>
             </tr>
         </tfoot>
     </table>
 
     <a href="meus-pedidos.html" class="btn btn-secondary mt-3">Voltar</a>
 </main>
-
+<script src="js/script.js"></script>
 </body>
 </html>

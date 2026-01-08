@@ -3,67 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Meu E-commerce</title>
+    <title>Login - Minha Loja</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS principal -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon">
 </head>
-<body>
 
-<!-- HEADER COM AVATAR + DROPDOWN -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar px-3">
+<body class="bg-light">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark px-3 custom-navbar">
     <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
         Minha Loja
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAvatar">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbarAvatar">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+
+        <!-- MENU PRINCIPAL -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="carrinho.html">Carrinho</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+            </li>
+            <ul class="navbar-nav align-items-center me-3">
+                <li class="nav-item position-relative">
+                    <a class="nav-link" href="carrinho.html">
+                        🛒
+                        <span
+                            id="cart-count"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                            0
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </ul>
+
+        <!-- MINHA CONTA -->
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="avatarDropdown"
-                   role="button" data-bs-toggle="dropdown">
-                    <img src="../imagens/Avatar.png" width="40" height="40" class="rounded-circle me-2 border border-light">
-                    <span>Minha Conta</span>
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                   id="avatarDropdown" role="button" data-bs-toggle="dropdown">
+                    <img src="../imagens/Avatar.png" width="40" height="40"
+                         class="rounded-circle me-2 border border-light">
+                    Minha Conta
                 </a>
 
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="novo_usuario.html">Cadastrar</a></li>
-                    <li><a class="dropdown-item" href="login.html">Entrar</a></li>
-                    <li><a class="dropdown-item" href="meus-dados.html">Meus Dados</a></li>
-                    <li><a class="dropdown-item" href="meus-pedidos.html">Meus Pedidos</a></li>
+                    <li>
+                        <a class="dropdown-item" href="novo-usuario.html" id="linkCadastrar">
+                            Cadastrar
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="login.html" id="linkEntrar">
+                            Entrar
+                        </a>
+                    </li>
+
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li>
+                        <a class="dropdown-item" href="meus-dados.html" id="linkMeusDados">
+                            Meus Dados
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="meus-pedidos.html" id="linkMeusPedidos">
+                            Meus Pedidos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item text-danger" href="#" id="linkSair">
+                            Sair
+                        </a>
+                    </li>
                 </ul>
+
             </li>
         </ul>
     </div>
 </nav>
 
 <!-- CONTEÚDO -->
-<main>
-    <div class="container-form">
-        <h1>Login</h1>
+<main class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
 
-        <form class="form-registro" action="produtos.html" method="GET">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+            <div class="card shadow">
+                <div class="card-body">
 
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
+                    <h2 class="text-center fw-bold mb-4">Entrar</h2>
 
-            <button type="submit" class="btn-cadastrar">Entrar</button>
-        </form>
+                    <!-- MENSAGENS -->
+                    <div id="mensagem"></div>
+
+                    <!-- FORMULÁRIO -->
+                    <form id="formLogin">
+
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuário</label>
+                            <input
+                            type="text"
+                            id="usuario"
+                            class="form-control"
+                            placeholder="Digite seu usuário"
+                            required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input
+                                type="password"
+                                id="senha"
+                                class="form-control"
+                                placeholder="Digite sua senha"
+                                required>
+                        </div>
+
+                        <div id="mensagem"></div>
+
+                        <button type="submit" class="btn btn-success w-100">
+                            Entrar
+                        </button>
+
+</form>
+
+
+                    <hr>
+
+                    <p class="text-center mb-0">
+                        Não tem conta?
+                        <a href="novo-usuario.html" class="fw-semibold text-decoration-none">
+                            Cadastre-se
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
     </div>
 </main>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2025 - Desenvolvido para o IFG</p>
+</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
-

@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus Pedidos</title>
+    <title>Meus Pedidos - Minha Loja</title>
 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <!-- HEADER -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar px-3">
+<nav class="navbar navbar-expand-lg navbar-dark px-3 custom-navbar">
     <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="../imagens/logo-ifg.png" alt="Logo" width="40" class="me-2">
         Minha Loja
@@ -21,53 +22,154 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbarAvatar">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+
+        <!-- MENU PRINCIPAL -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="carrinho.html">Carrinho</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+            </li>
+             <ul class="navbar-nav align-items-center me-3">
+                <li class="nav-item position-relative">
+                    <a class="nav-link" href="carrinho.html">
+                        🛒
+                        <span
+                            id="cart-count"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                            0
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </ul>
+
+        <!-- MINHA CONTA -->
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="avatarDropdown"
-                   role="button" data-bs-toggle="dropdown">
-                    <img src="../imagens/Avatar.png" width="40" height="40" class="rounded-circle me-2 border border-light">
-                    <span>Minha Conta</span>
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                   id="avatarDropdown" role="button" data-bs-toggle="dropdown">
+                    <img src="../imagens/Avatar.png" width="40" height="40"
+                         class="rounded-circle me-2 border border-light">
+                    Minha Conta
                 </a>
 
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="novo-usuario.html">Cadastrar</a></li>
-                    <li><a class="dropdown-item" href="login.html">Entrar</a></li>
-                    <li><a class="dropdown-item" href="meus-dados.html">Meus Dados</a></li>
-                    <li><a class="dropdown-item" href="meus-pedidos.html">Meus Pedidos</a></li>
-                </ul>
-            </li>
-        </ul>
+
+    <!-- Usuário NÃO logado -->
+    <li>
+        <a class="dropdown-item" href="novo-usuario.html" id="linkCadastrar">
+            Cadastrar
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item" href="login.html" id="linkEntrar">
+            Entrar
+        </a>
+    </li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- Usuário LOGADO -->
+    <li>
+        <a class="dropdown-item" href="meus-dados.html" id="linkMeusDados">
+            Meus Dados
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item" href="meus-pedidos.html" id="linkMeusPedidos">
+            Meus Pedidos
+        </a>
+    </li>
+
+    <li>
+        <a class="dropdown-item text-danger" href="#" id="linkSair">
+            Sair
+        </a>
+    </li>
+
+</ul>
+
     </div>
 </nav>
 
-<main class="container mt-4">
-    <h1 class="text-center text-success mb-4">Meus Pedidos</h1>
+<!-- CONTEÚDO -->
+<main class="container my-5">
 
-    <div class="list-group shadow">
+    <h1 class="text-center fw-bold mb-4">Meus Pedidos</h1>
 
-        <!-- Pedido 1 -->
-        <div class="list-group-item">
-            <h4>Pedido #001</h4>
-            <p><strong>Data:</strong> 12/11/2025</p>
-            <p><strong>Status:</strong> Enviado</p>
-            <a href="pedido_1.html" class="btn btn-success">Ver detalhes do pedido</a>
+    <!-- PEDIDO 1 -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="row align-items-center">
+
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-1">Pedido #001</h5>
+                    <small class="text-muted">Realizado em: 12/11/2025</small>
+                </div>
+
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <span class="badge bg-warning text-dark px-3 py-2">
+                        Enviado
+                    </span>
+                </div>
+
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <p class="mb-0 fw-semibold">Total:</p>
+                    <span class="text-success fw-bold">R$ 2.348,80</span>
+                </div>
+
+                <div class="col-md-2 mt-3 mt-md-0 text-md-end">
+                    <a href="pedido_1.html" class="btn btn-outline-success">
+                        Ver detalhes
+                    </a>
+                </div>
+
+            </div>
         </div>
+    </div>
 
-        <!-- Pedido 2 -->
-        <div class="list-group-item mt-3">
-            <h4>Pedido #002</h4>
-            <p><strong>Data:</strong> 08/11/2025</p>
-            <p><strong>Status:</strong> Entregue</p>
-            <a href="pedido_2.html" class="btn btn-success">Ver detalhes do pedido</a>
+    <!-- PEDIDO 2 -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="row align-items-center">
+
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-1">Pedido #002</h5>
+                    <small class="text-muted">Realizado em: 08/11/2025</small>
+                </div>
+
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <span class="badge bg-success px-3 py-2">
+                        Entregue
+                    </span>
+                </div>
+
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <p class="mb-0 fw-semibold">Total:</p>
+                    <span class="text-success fw-bold">R$ 349,90</span>
+                </div>
+
+                <div class="col-md-2 mt-3 mt-md-0 text-md-end">
+                    <a href="pedido_2.html" class="btn btn-outline-success">
+                        Ver detalhes
+                    </a>
+                </div>
+
+            </div>
         </div>
-
     </div>
 
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="js/script.js"></script>
 </body>
 </html>
-
