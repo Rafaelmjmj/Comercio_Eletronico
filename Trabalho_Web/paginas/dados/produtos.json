@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Camiseta Seleção Brasil",
+    "price": 99.90
+  },
+  {
+    "id": 2,
+    "name": "Tênis Ja Morant 3",
+    "price": 799.90
+  },
+  {
+    "id": 3,
+    "name": "Bola de Vôlei Mikasa",
+    "price": 299.90
+  },
+  {
+    "id": 4,
+    "name": "Camiseta Internacional",
+    "price": 89.90
+  },
+  {
+    "id": 5,
+    "name": "Chuteira Adidas",
+    "price": 499.90
+  },
+  {
+    "id": 6,
+    "name": "Camiseta Vasco da Gama",
+    "price": 79.90
+  }
+]
